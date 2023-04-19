@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
-import "./sorting.js";
+
+import "bootstrap/dist/css/bootstrap.css";
+import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 
 function App() {
   const [data, setData] = useState([]);
@@ -17,12 +19,12 @@ function App() {
   return (
     <div className="App">
       <h1>Users</h1>
-      <table id="selectedColumn" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+      <table id="selectedColumn" class="table table-striped table-hover mt-3 sortable" cellspacing="0" width="100%">
         <thead>
           <tr>
-            <th class="th-sm">Full Name</th>
-            <th class="th-sm">Username</th>
-            <th class="th-sm">Thumbnail Icon</th>
+            <th scope="col" class="th-sm">Full Name</th>
+            <th scope="col" class="th-sm">Username</th>
+            <th scope="col" class="th-sm">Thumbnail Icon</th>
           </tr>
         </thead>
         <tbody>
@@ -35,7 +37,7 @@ function App() {
                 {user.login.username}
               </td>
               <td>
-                {user.picture.thumbnail}
+                <img src={user.picture.thumbnail}></img>
               </td>
             </tr>
           ))}
