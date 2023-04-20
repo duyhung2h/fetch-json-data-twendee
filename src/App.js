@@ -49,7 +49,7 @@ export default function App() {
           });
           setUserList(userListPending);
           setIsLoaded(true);
-          setTotalRows(1000);
+          setTotalRows(100);
           console.log(userListPending);
         },
         (error) => {
